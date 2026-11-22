@@ -290,7 +290,7 @@ class UIController {
         }
 
         const link = document.createElement('a');
-        link.download = `Mapa-Calor-Poster-${this.options.modelId}.png`;
+        link.download = `NaSight-Mapa-Calor-${this.options.modelId}.png`;
         link.href = out.toDataURL('image/png');
         link.click();
     }

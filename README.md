@@ -1,8 +1,8 @@
-# 👁️ SaliencyVision IA — Mapas de Calor y Atención Visual para Pósters Científicos
+# 👁️ NaSight — Mapas de Calor y Atención Visual para Pósters Científicos
 
 > **Hecho por [NachoFari](https://github.com/NachoFari)** · Licencia **GNU GPLv3** · 100% Portable · Cero Dependencias Externas
 
-**SaliencyVision IA** es una herramienta interactiva y ultraliviana que predice y visualiza mediante un **mapa de calor térmico superpuesto** hacia dónde se dirigirá la mirada humana durante los primeros segundos al observar un **póster científico, infografía o diseño gráfico**.
+**NaSight** es una herramienta interactiva y ultraliviana que predice y visualiza mediante un **mapa de calor térmico superpuesto** hacia dónde se dirigirá la mirada humana durante los primeros segundos al observar un **póster científico, infografía o diseño gráfico**.
 
 ---
 
@@ -12,7 +12,7 @@ No necesitas instalar Python, Node.js, librerías ni servidores:
 
 1. **Descarga** el ZIP o clona este repositorio:
    ```bash
-   git clone https://github.com/NachoFari/Poster-Saliency-IA.git
+   git clone https://github.com/NachoFari/NaSight.git
    ```
 2. Entra a la carpeta y elige cualquiera de las dos opciones:
    * **Opción A (Universal - Windows / Mac / Linux)**: Haz doble clic en **`ABRIR_PROGRAMA.html`**.
@@ -65,7 +65,7 @@ donde $\sigma$ es la desviación estándar entre los 3 modelos en cada píxel. G
 El proyecto está dividido en módulos pequeños de responsabilidad única para facilitar su lectura, mantenimiento y auditoría sin archivos monolíticos:
 
 ```text
-Poster-Saliency-IA/
+NaSight/
 ├── ABRIR_PROGRAMA.html          # Archivo principal (haz doble clic aquí para abrir)
 ├── Iniciar_Modo_Ventana.bat     # Lanzador opcional en Windows (modo ventana nativa)
 ├── LICENSE                      # Licencia GNU General Public License v3.0
