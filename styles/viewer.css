@@ -1,39 +1,127 @@
 /**
- * viewer.css - Estilos para el visor central y lienzos apilados
+ * viewer.css - Estilos para el visor central, zoom/pan, split A/B, leyenda térmica y test 3s
  */
 
 .viewer-area {
     flex: 1;
-    background-color: #07090e;
+    background-color: var(--viewer-bg);
     background-image: 
-        radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.4) 0%, transparent 80%),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        radial-gradient(circle at 50% 50%, var(--fox-orange-soft) 0%, transparent 75%),
+        linear-gradient(var(--viewer-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--viewer-grid) 1px, transparent 1px);
     background-size: 100% 100%, 24px 24px, 24px 24px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
-    padding: 30px;
+    overflow: hidden;
+    padding: 54px 24px 52px 24px;
     position: relative;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+
+.viewer-toolbar {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+}
+
+.viewer-tool-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.viewer-tool-btn:hover {
+    background: var(--bg-elevated);
+    border-color: var(--border-color);
+}
+
+.viewer-tool-btn.active {
+    background: var(--fox-orange-soft);
+    color: var(--fox-orange);
+    border-color: var(--fox-orange);
+}
+
+.viewer-tool-sep {
+    width: 1px;
+    height: 16px;
+    background: var(--border-color);
+    margin: 0 2px;
+}
+
+.zoom-label {
+    font-size: 0.73rem;
+    font-weight: 800;
+    color: var(--fox-orange);
+    min-width: 40px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.viewer-stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+    transition: transform 0.06s linear;
 }
 
 .canvas-wrapper {
     position: relative;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 0 1.5px var(--border-color);
     border-radius: var(--radius-sm);
     overflow: hidden;
-    max-width: 100%;
-    max-height: 100%;
     display: inline-block;
+    cursor: grab;
+}
+
+.canvas-wrapper:active {
+    cursor: grabbing;
+}
+
+.canvas-wrapper.aoi-drawing {
+    cursor: crosshair !important;
 }
 
 /* Lienzo 1: Imagen base del póster */
 #baseCanvas {
     display: block;
-    max-width: 100%;
-    max-height: calc(100vh - 140px);
+    max-width: calc(100vw - 720px);
+    max-height: calc(100vh - 170px);
     object-fit: contain;
+}
+
+/* Lienzo 1B: Versión B opcional para comparador A/B */
+#compareCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
 }
 
 /* Lienzo 2: Capa de mapa de calor sobre la imagen */
@@ -46,7 +134,7 @@
     pointer-events: none;
 }
 
-/* Lienzo 3: Capa de trayectoria ocular y puntos 1-2-3 */
+/* Lienzo 3: Capa de trayectoria ocular, puntos 1-2-3 y cajas AOI */
 #scanpathCanvas {
     position: absolute;
     top: 0;
@@ -56,30 +144,134 @@
     pointer-events: none;
 }
 
-.drop-overlay-hint {
+/* Divisor interactivo del Split View (Cortina A/B) */
+.split-divider {
     position: absolute;
-    bottom: 20px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--fox-orange);
+    box-shadow: 0 0 10px var(--fox-orange-glow);
+    z-index: 20;
+    cursor: ew-resize;
+    display: none;
+}
+
+.split-divider.active {
+    display: block;
+}
+
+.split-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--fox-orange);
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+/* Overlay cuenta regresiva Test 3 Segundos */
+.countdown-overlay {
+    position: absolute;
+    top: 60px;
+    right: 22px;
+    z-index: 35;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--fox-orange);
+    border-radius: var(--radius-md);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-overlay.hidden {
+    display: none !important;
+}
+
+.countdown-time {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--fox-orange);
+    font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Barra inferior: Leyenda térmica + Hint de drag & drop */
+.viewer-bottom-bar {
+    position: absolute;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(17, 24, 39, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 25;
+    max-width: 96%;
+}
+
+.thermal-legend {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
     border-radius: 9999px;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
+    padding: 5px 12px;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
+}
+
+.thermal-gradient-bar {
+    width: 96px;
+    height: 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+}
+
+.drop-overlay-hint {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 5px 14px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
     pointer-events: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
 }
 
 .drop-overlay-hint kbd {
-    background: var(--bg-input);
-    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    border: 1px solid var(--fox-orange);
     border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 0.75rem;
-    color: var(--accent-cyan);
+    padding: 1px 5px;
+    font-size: 0.71rem;
+    font-weight: 700;
+    color: var(--fox-orange);
 }

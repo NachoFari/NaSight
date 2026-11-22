@@ -1,0 +1,594 @@
+/**
+ * themes.css - Motor de 20 Temas Visuales de NaSuite (estilo NaTex Studio)
+ * Incluye Fox Orange (default), Panther OLED, Cosmos, Owl, Frog, Penguin,
+ * Panda, Bee, Wolf, Lion, Octopus, Whale, Bat, Dino, Maple, Coffee, Mushroom,
+ * Rabbit (claro), Sakura (claro) y Unicorn (claro).
+ */
+
+/* 1. Fox - Zorro Clásico (Dark / Default NaSuite) */
+:root,
+[data-theme="fox"],
+[data-theme="dark"] {
+    --bg-window: #0e1015;
+    --bg-dark: #101116;
+    --bg-surface: #181a24;
+    --bg-elevated: #222533;
+    --bg-hover: #282c3d;
+    --border-color: #2a2e40;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --fox-orange: #FF6B35;
+    --fox-orange-hover: #ff7e4a;
+    --fox-orange-glow: rgba(255, 107, 53, 0.3);
+    --fox-orange-soft: rgba(255, 107, 53, 0.14);
+    --text-main: #f3f4f8;
+    --text-muted: #9499ad;
+    --viewer-bg: #080a0f;
+    --viewer-grid: rgba(255, 255, 255, 0.035);
+    --on-accent: #ffffff;
+}
+
+/* 2. Rabbit - Conejo Algodón (Light / Algodón) */
+[data-theme="rabbit"],
+[data-theme="light"] {
+    --bg-window: #f1f5f9;
+    --bg-dark: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --bg-hover: #e2e8f0;
+    --border-color: #cbd5e1;
+    --border-subtle: rgba(15, 23, 42, 0.08);
+    --fox-orange: #EC4899;
+    --fox-orange-hover: #db2777;
+    --fox-orange-glow: rgba(236, 72, 153, 0.25);
+    --fox-orange-soft: rgba(236, 72, 153, 0.12);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --viewer-bg: #e2e8f0;
+    --viewer-grid: rgba(15, 23, 42, 0.06);
+    --on-accent: #ffffff;
+}
+
+/* 3. Sakura - Flor de Cerezo (Light / Pastel Floral) */
+[data-theme="sakura"] {
+    --bg-window: #faeff2;
+    --bg-dark: #fdf8f9;
+    --bg-surface: #ffffff;
+    --bg-elevated: #fce7ed;
+    --bg-hover: #fbcfe8;
+    --border-color: #f9a8d4;
+    --border-subtle: rgba(244, 114, 182, 0.15);
+    --fox-orange: #F472B6;
+    --fox-orange-hover: #ec4899;
+    --fox-orange-glow: rgba(244, 114, 182, 0.3);
+    --fox-orange-soft: rgba(244, 114, 182, 0.15);
+    --text-main: #2d2329;
+    --text-muted: #83677b;
+    --viewer-bg: #f5e1e8;
+    --viewer-grid: rgba(131, 103, 123, 0.08);
+    --on-accent: #ffffff;
+}
+
+/* 4. Unicorn - Unicornio Pastel (Light / Mágico) */
+[data-theme="unicorn"] {
+    --bg-window: #f3e8ff;
+    --bg-dark: #faf7ff;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f3e8ff;
+    --bg-hover: #e9d5ff;
+    --border-color: #d8b4fe;
+    --border-subtle: rgba(168, 85, 247, 0.14);
+    --fox-orange: #A855F7;
+    --fox-orange-hover: #9333ea;
+    --fox-orange-glow: rgba(168, 85, 247, 0.28);
+    --fox-orange-soft: rgba(168, 85, 247, 0.14);
+    --text-main: #2e1065;
+    --text-muted: #7e69ab;
+    --viewer-bg: #ede3fc;
+    --viewer-grid: rgba(126, 105, 171, 0.08);
+    --on-accent: #ffffff;
+}
+
+/* 5. Coffee - Café de Otoño (Dark / Sepia Cálido) */
+[data-theme="coffee"] {
+    --bg-window: #140f0d;
+    --bg-dark: #1a1412;
+    --bg-surface: #251c19;
+    --bg-elevated: #342722;
+    --bg-hover: #403029;
+    --border-color: #48352e;
+    --border-subtle: rgba(217, 119, 6, 0.12);
+    --fox-orange: #D97706;
+    --fox-orange-hover: #f59e0b;
+    --fox-orange-glow: rgba(217, 119, 6, 0.3);
+    --fox-orange-soft: rgba(217, 119, 6, 0.15);
+    --text-main: #fdf6ed;
+    --text-muted: #aa9486;
+    --viewer-bg: #110d0b;
+    --viewer-grid: rgba(253, 246, 237, 0.035);
+    --on-accent: #ffffff;
+}
+
+/* 6. Mushroom - Bosque Cottagecore (Dark / Terracota Carmesí) */
+[data-theme="mushroom"] {
+    --bg-window: #110e10;
+    --bg-dark: #161214;
+    --bg-surface: #211a1f;
+    --bg-elevated: #2e242b;
+    --bg-hover: #3a2d36;
+    --border-color: #42323e;
+    --border-subtle: rgba(239, 68, 68, 0.12);
+    --fox-orange: #EF4444;
+    --fox-orange-hover: #f87171;
+    --fox-orange-glow: rgba(239, 68, 68, 0.3);
+    --fox-orange-soft: rgba(239, 68, 68, 0.15);
+    --text-main: #fbf0f4;
+    --text-muted: #ad94a4;
+    --viewer-bg: #0d0a0c;
+    --viewer-grid: rgba(251, 240, 244, 0.035);
+    --on-accent: #ffffff;
+}
+
+/* 7. Owl - Búho Académico (Dark / Midnight Navy) */
+[data-theme="owl"] {
+    --bg-window: #090e1a;
+    --bg-dark: #0c1222;
+    --bg-surface: #131d33;
+    --bg-elevated: #1b2847;
+    --bg-hover: #223359;
+    --border-color: #27385e;
+    --border-subtle: rgba(251, 191, 36, 0.12);
+    --fox-orange: #FBBF24;
+    --fox-orange-hover: #fcd34d;
+    --fox-orange-glow: rgba(251, 191, 36, 0.3);
+    --fox-orange-soft: rgba(251, 191, 36, 0.15);
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --viewer-bg: #070b14;
+    --viewer-grid: rgba(241, 245, 249, 0.035);
+    --on-accent: #0f172a;
+}
+
+/* 8. Frog - Ranita Matcha Zen (Dark / Bosque Matcha) */
+[data-theme="frog"] {
+    --bg-window: #09110e;
+    --bg-dark: #0d1713;
+    --bg-surface: #14241e;
+    --bg-elevated: #1b3329;
+    --bg-hover: #224034;
+    --border-color: #27493b;
+    --border-subtle: rgba(16, 185, 129, 0.12);
+    --fox-orange: #10B981;
+    --fox-orange-hover: #34d399;
+    --fox-orange-glow: rgba(16, 185, 129, 0.3);
+    --fox-orange-soft: rgba(16, 185, 129, 0.15);
+    --text-main: #e6f9f0;
+    --text-muted: #7fa996;
+    --viewer-bg: #070d0b;
+    --viewer-grid: rgba(230, 249, 240, 0.035);
+    --on-accent: #062218;
+}
+
+/* 9. Penguin - Pingüino Glaciar (Dark / Glaciar Cyan) */
+[data-theme="penguin"] {
+    --bg-window: #0a0f14;
+    --bg-dark: #0e141a;
+    --bg-surface: #141e26;
+    --bg-elevated: #1b2833;
+    --bg-hover: #223240;
+    --border-color: #253746;
+    --border-subtle: rgba(6, 182, 212, 0.12);
+    --fox-orange: #06B6D4;
+    --fox-orange-hover: #22d3ee;
+    --fox-orange-glow: rgba(6, 182, 212, 0.3);
+    --fox-orange-soft: rgba(6, 182, 212, 0.15);
+    --text-main: #edf8fa;
+    --text-muted: #8ca5b5;
+    --viewer-bg: #080c10;
+    --viewer-grid: rgba(237, 248, 250, 0.035);
+    --on-accent: #061b22;
+}
+
+/* 10. Panda - Panda Bambú (Dark / Slate Bambú) */
+[data-theme="panda"] {
+    --bg-window: #0d100d;
+    --bg-dark: #121612;
+    --bg-surface: #192019;
+    --bg-elevated: #222d22;
+    --bg-hover: #2a382a;
+    --border-color: #2f3e2f;
+    --border-subtle: rgba(132, 204, 22, 0.12);
+    --fox-orange: #84CC16;
+    --fox-orange-hover: #a3e635;
+    --fox-orange-glow: rgba(132, 204, 22, 0.3);
+    --fox-orange-soft: rgba(132, 204, 22, 0.15);
+    --text-main: #f2f8ed;
+    --text-muted: #8fa58b;
+    --viewer-bg: #0a0c0a;
+    --viewer-grid: rgba(242, 248, 237, 0.035);
+    --on-accent: #111c05;
+}
+
+/* 11. Bee - Abejita Dorada (Dark / Carbón Dorado) */
+[data-theme="bee"] {
+    --bg-window: #0f0e0a;
+    --bg-dark: #14130e;
+    --bg-surface: #1f1d15;
+    --bg-elevated: #2c281c;
+    --bg-hover: #383324;
+    --border-color: #3e3826;
+    --border-subtle: rgba(245, 158, 11, 0.12);
+    --fox-orange: #F59E0B;
+    --fox-orange-hover: #fbbf24;
+    --fox-orange-glow: rgba(245, 158, 11, 0.3);
+    --fox-orange-soft: rgba(245, 158, 11, 0.15);
+    --text-main: #fdfbf1;
+    --text-muted: #a49e8a;
+    --viewer-bg: #0b0a07;
+    --viewer-grid: rgba(253, 251, 241, 0.035);
+    --on-accent: #181203;
+}
+
+/* 12. Wolf - Lobo Ártico (Dark / Slate Blue) */
+[data-theme="wolf"] {
+    --bg-window: #0b0f17;
+    --bg-dark: #0f141e;
+    --bg-surface: #161e2c;
+    --bg-elevated: #1f2b3e;
+    --bg-hover: #27364e;
+    --border-color: #2c3c56;
+    --border-subtle: rgba(96, 165, 250, 0.12);
+    --fox-orange: #60A5FA;
+    --fox-orange-hover: #93c5fd;
+    --fox-orange-glow: rgba(96, 165, 250, 0.3);
+    --fox-orange-soft: rgba(96, 165, 250, 0.15);
+    --text-main: #f0f6ff;
+    --text-muted: #91a4c0;
+    --viewer-bg: #080b12;
+    --viewer-grid: rgba(240, 246, 255, 0.035);
+    --on-accent: #091526;
+}
+
+/* 13. Lion - León Solar (Dark / Ámbar Solar) */
+[data-theme="lion"] {
+    --bg-window: #120f08;
+    --bg-dark: #19150b;
+    --bg-surface: #251f10;
+    --bg-elevated: #342c16;
+    --bg-hover: #42371c;
+    --border-color: #483c1e;
+    --border-subtle: rgba(234, 179, 8, 0.12);
+    --fox-orange: #EAB308;
+    --fox-orange-hover: #facc15;
+    --fox-orange-glow: rgba(234, 179, 8, 0.3);
+    --fox-orange-soft: rgba(234, 179, 8, 0.15);
+    --text-main: #fefce8;
+    --text-muted: #a9a07e;
+    --viewer-bg: #0d0b06;
+    --viewer-grid: rgba(254, 252, 232, 0.035);
+    --on-accent: #1a1403;
+}
+
+/* 14. Octopus - Pulpo Synthwave (Dark / Magenta Neón) */
+[data-theme="octopus"] {
+    --bg-window: #0e0914;
+    --bg-dark: #140d1c;
+    --bg-surface: #1e132a;
+    --bg-elevated: #291a39;
+    --bg-hover: #352149;
+    --border-color: #3d2556;
+    --border-subtle: rgba(232, 121, 249, 0.12);
+    --fox-orange: #E879F9;
+    --fox-orange-hover: #f0abfc;
+    --fox-orange-glow: rgba(232, 121, 249, 0.3);
+    --fox-orange-soft: rgba(232, 121, 249, 0.15);
+    --text-main: #fdf4ff;
+    --text-muted: #b196c6;
+    --viewer-bg: #0b0710;
+    --viewer-grid: rgba(253, 244, 255, 0.035);
+    --on-accent: #210726;
+}
+
+/* 15. Whale - Océano Abisal (Dark / Azul Abisal) */
+[data-theme="whale"] {
+    --bg-window: #070e13;
+    --bg-dark: #0a131a;
+    --bg-surface: #101e29;
+    --bg-elevated: #162838;
+    --bg-hover: #1c3347;
+    --border-color: #1f3950;
+    --border-subtle: rgba(56, 189, 248, 0.12);
+    --fox-orange: #38BDF8;
+    --fox-orange-hover: #7dd3fc;
+    --fox-orange-glow: rgba(56, 189, 248, 0.3);
+    --fox-orange-soft: rgba(56, 189, 248, 0.15);
+    --text-main: #f0f9ff;
+    --text-muted: #84a6c0;
+    --viewer-bg: #050a0e;
+    --viewer-grid: rgba(240, 249, 255, 0.035);
+    --on-accent: #071926;
+}
+
+/* 16. Cosmos - Cosmos Estelar (Dark / Violeta Nebulosa) */
+[data-theme="cosmos"] {
+    --bg-window: #0b0a17;
+    --bg-dark: #100e1f;
+    --bg-surface: #18152e;
+    --bg-elevated: #221d41;
+    --bg-hover: #2b2552;
+    --border-color: #322b5e;
+    --border-subtle: rgba(139, 92, 246, 0.12);
+    --fox-orange: #8B5CF6;
+    --fox-orange-hover: #a78bfa;
+    --fox-orange-glow: rgba(139, 92, 246, 0.3);
+    --fox-orange-soft: rgba(139, 92, 246, 0.16);
+    --text-main: #f5f3ff;
+    --text-muted: #9e97cb;
+    --viewer-bg: #080711;
+    --viewer-grid: rgba(245, 243, 255, 0.035);
+    --on-accent: #ffffff;
+}
+
+/* 17. Bat - Murciélago Gótico (Dark / Terciopelo Rosa) */
+[data-theme="bat"] {
+    --bg-window: #0e0609;
+    --bg-dark: #14090d;
+    --bg-surface: #200f15;
+    --bg-elevated: #2d151f;
+    --bg-hover: #3a1b28;
+    --border-color: #401d2c;
+    --border-subtle: rgba(225, 29, 72, 0.12);
+    --fox-orange: #E11D48;
+    --fox-orange-hover: #f43f5e;
+    --fox-orange-glow: rgba(225, 29, 72, 0.3);
+    --fox-orange-soft: rgba(225, 29, 72, 0.16);
+    --text-main: #fff1f2;
+    --text-muted: #af8b96;
+    --viewer-bg: #0a0406;
+    --viewer-grid: rgba(255, 241, 242, 0.035);
+    --on-accent: #ffffff;
+}
+
+/* 18. Dino - Dino Matrix Retro (Dark / Verde Terminal) */
+[data-theme="dino"] {
+    --bg-window: #070e09;
+    --bg-dark: #0a140d;
+    --bg-surface: #102015;
+    --bg-elevated: #162c1d;
+    --bg-hover: #1c3825;
+    --border-color: #213f2a;
+    --border-subtle: rgba(34, 197, 94, 0.12);
+    --fox-orange: #22C55E;
+    --fox-orange-hover: #4ade80;
+    --fox-orange-glow: rgba(34, 197, 94, 0.3);
+    --fox-orange-soft: rgba(34, 197, 94, 0.15);
+    --text-main: #dcfce7;
+    --text-muted: #7ca988;
+    --viewer-bg: #050a06;
+    --viewer-grid: rgba(220, 252, 231, 0.035);
+    --on-accent: #05210e;
+}
+
+/* 19. Maple - Hoja de Otoño (Dark / Terracota) */
+[data-theme="maple"] {
+    --bg-window: #120c09;
+    --bg-dark: #18110d;
+    --bg-surface: #241812;
+    --bg-elevated: #322119;
+    --bg-hover: #402a20;
+    --border-color: #462d22;
+    --border-subtle: rgba(234, 88, 12, 0.12);
+    --fox-orange: #EA580C;
+    --fox-orange-hover: #f97316;
+    --fox-orange-glow: rgba(234, 88, 12, 0.3);
+    --fox-orange-soft: rgba(234, 88, 12, 0.16);
+    --text-main: #fff7ed;
+    --text-muted: #b19888;
+    --viewer-bg: #0d0907;
+    --viewer-grid: rgba(255, 247, 237, 0.035);
+    --on-accent: #ffffff;
+}
+
+/* 20. Panther - Pantera OLED (True Black / Acero Platino) */
+[data-theme="panther"] {
+    --bg-window: #000000;
+    --bg-dark: #050608;
+    --bg-surface: #0c0e13;
+    --bg-elevated: #151821;
+    --bg-hover: #1e222e;
+    --border-color: #232734;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --fox-orange: #94A3B8;
+    --fox-orange-hover: #cbd5e1;
+    --fox-orange-glow: rgba(148, 163, 184, 0.25);
+    --fox-orange-soft: rgba(148, 163, 184, 0.14);
+    --text-main: #f8fafc;
+    --text-muted: #8a94a6;
+    --viewer-bg: #000000;
+    --viewer-grid: rgba(255, 255, 255, 0.03);
+    --on-accent: #090b10;
+}
+
+/* ==========================================================================
+   MODAL SELECTOR DE TEMAS (ESTILO NATEX STUDIO)
+   ========================================================================== */
+.theme-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: rgba(8, 10, 15, 0.72);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeInModal 0.18s ease-out;
+}
+
+.theme-modal-backdrop.hidden {
+    display: none !important;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.theme-modal-card {
+    width: 100%;
+    max-width: 760px;
+    max-height: 85vh;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.theme-modal-header {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-elevated);
+}
+
+.theme-modal-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-modal-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.theme-modal-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.theme-modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.theme-modal-close:hover {
+    border-color: var(--fox-orange);
+    color: var(--fox-orange);
+    background: var(--fox-orange-soft);
+}
+
+.theme-modal-body {
+    padding: 18px 22px;
+    overflow-y: auto;
+}
+
+.theme-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+    gap: 10px;
+}
+
+.theme-card-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    border-radius: 10px;
+    background: var(--bg-dark);
+    border: 1.5px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    gap: 6px;
+    text-align: center;
+}
+
+.theme-card-option:hover {
+    border-color: var(--fox-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+}
+
+.theme-card-option.active {
+    border-color: var(--fox-orange);
+    background: var(--bg-elevated);
+    box-shadow: 0 0 0 2px var(--fox-orange-glow);
+}
+
+.theme-card-mascot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 2px;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-card-option:hover .theme-card-mascot {
+    transform: scale(1.12);
+}
+
+.theme-card-mascot img,
+.theme-card-mascot .pixel-mascot-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.theme-card-name {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.25;
+}
+
+.theme-card-option.active .theme-card-name {
+    color: var(--fox-orange);
+}
+
+.theme-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.theme-card-badge {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.theme-card-mode {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
